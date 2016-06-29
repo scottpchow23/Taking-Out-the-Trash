@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Recycle-->
+        <!--Recycle View-->
         <scene sceneID="KWt-Yl-05D">
             <objects>
-                <viewController title="Recycle" id="aO2-cL-Fuw" sceneMemberID="viewController">
+                <viewController title="Recycle View" id="aO2-cL-Fuw" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ANe-WQ-RCc"/>
                         <viewControllerLayoutGuide type="bottom" id="NkB-C3-IQK"/>
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i5M-ta-fsw" id="EiJ-dZ-Qc2">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqm-1j-0Oc">
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-662" y="700"/>
         </scene>
-        <!--Compost-->
+        <!--Compost View-->
         <scene sceneID="21e-u4-hmx">
             <objects>
-                <viewController title="Compost" id="yLN-z5-Svi" sceneMemberID="viewController">
+                <viewController title="Compost View" id="yLN-z5-Svi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qaO-Oe-Wqs"/>
                         <viewControllerLayoutGuide type="bottom" id="jDH-dg-4uk"/>
@@ -83,7 +83,7 @@
                                         <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FLR-BH-jHw" id="Jam-f1-1SO">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G28-ox-xSA">
@@ -115,7 +115,6 @@
         <!--Add Trash-->
         <scene sceneID="WCk-wK-Oo9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yGf-ay-d3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Add Trash" id="AbT-Dw-4cQ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hrx-AH-NbY"/>
@@ -156,13 +155,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Trash" id="rlR-94-S8A"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGf-ay-d3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2346" y="1264"/>
         </scene>
-        <!--Garbage-->
+        <!--Tab Bar Controller-->
         <scene sceneID="GAO-Hq-IHW">
             <objects>
-                <tabBarController title="Garbage" id="hff-qV-0FH" sceneMemberID="viewController">
+                <tabBarController title="Tab Bar Controller" id="hff-qV-0FH" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="bOJ-mO-OkZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="-2294" y="370"/>
         </scene>
-        <!--Compost-->
+        <!--Compost Nav-->
         <scene sceneID="r9s-0Y-qhV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mk0-71-b0K" sceneMemberID="viewController">
+                <navigationController title="Compost Nav" automaticallyAdjustsScrollViewInsets="NO" id="Mk0-71-b0K" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Compost" id="H0z-2O-QzK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Du8-Xx-WSi">
@@ -197,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="-1474" y="39"/>
         </scene>
-        <!--Recycle-->
+        <!--Recycle Nav-->
         <scene sceneID="QRh-Sg-e5o">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aLE-CI-YnS" sceneMemberID="viewController">
+                <navigationController title="Recycle Nav" automaticallyAdjustsScrollViewInsets="NO" id="aLE-CI-YnS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recycle" id="bca-xj-KeF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wf7-Ej-dfS">
@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="-1474" y="700"/>
         </scene>
-        <!--View Controller-->
+        <!--Garbage View-->
         <scene sceneID="75P-51-Gn0">
             <objects>
-                <viewController id="HP5-Ul-DOa" sceneMemberID="viewController">
+                <viewController title="Garbage View" id="HP5-Ul-DOa" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pWG-vV-7vo"/>
                         <viewControllerLayoutGuide type="bottom" id="4nF-IH-4J8"/>
@@ -236,7 +236,7 @@
                                         <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6iC-IL-qid" id="fJG-TF-tOr">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upZ-G6-zzJ">
@@ -265,10 +265,10 @@
             </objects>
             <point key="canvasLocation" x="-670" y="1442"/>
         </scene>
-        <!--Garbage-->
+        <!--Garbage Nav-->
         <scene sceneID="qUo-0b-S1t">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cyd-nH-EKI" sceneMemberID="viewController">
+                <navigationController title="Garbage Nav" automaticallyAdjustsScrollViewInsets="NO" id="Cyd-nH-EKI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Garbage" id="dK3-6i-aQE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oGl-pj-LiM">
