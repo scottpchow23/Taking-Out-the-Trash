@@ -7,19 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9213012FC2759A6F4273C3A6 /* Pods_Taking_Out_the_Trash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB08C29AFC51CFB64474218 /* Pods_Taking_Out_the_Trash.framework */; };
 		B847D2C81D2436B10018EB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2C71D2436B10018EB46 /* AppDelegate.swift */; };
 		B847D2CD1D2436B10018EB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B847D2CB1D2436B10018EB46 /* Main.storyboard */; };
 		B847D2CF1D2436B20018EB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B847D2CE1D2436B20018EB46 /* Assets.xcassets */; };
 		B847D2D21D2436B20018EB46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B847D2D01D2436B20018EB46 /* LaunchScreen.storyboard */; };
+		B847D2DA1D246F740018EB46 /* CompostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2D91D246F740018EB46 /* CompostListViewController.swift */; };
+		B847D2DC1D246F860018EB46 /* RecycleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2DB1D246F860018EB46 /* RecycleListViewController.swift */; };
+		B847D2DE1D246F940018EB46 /* GarbageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2DD1D246F940018EB46 /* GarbageListViewController.swift */; };
+		B847D2E11D24703A0018EB46 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2E01D24703A0018EB46 /* Trash.swift */; };
+		B847D2E91D2472BC0018EB46 /* CreateTrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2E81D2472BC0018EB46 /* CreateTrashViewController.swift */; };
+		B847D2EB1D2473250018EB46 /* TrashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2EA1D2473250018EB46 /* TrashTableViewCell.swift */; };
+		B847D2ED1D2488790018EB46 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2EC1D2488790018EB46 /* RealmHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3781D7A74F6A5E58B7582CF4 /* Pods-Taking Out the Trash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taking Out the Trash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taking Out the Trash/Pods-Taking Out the Trash.debug.xcconfig"; sourceTree = "<group>"; };
+		7CB08C29AFC51CFB64474218 /* Pods_Taking_Out_the_Trash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taking_Out_the_Trash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B847D2C41D2436B10018EB46 /* Taking Out the Trash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taking Out the Trash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B847D2C71D2436B10018EB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B847D2CC1D2436B10018EB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B847D2CE1D2436B20018EB46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B847D2D11D2436B20018EB46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B847D2D31D2436B20018EB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B847D2D91D246F740018EB46 /* CompostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompostListViewController.swift; sourceTree = "<group>"; };
+		B847D2DB1D246F860018EB46 /* RecycleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecycleListViewController.swift; sourceTree = "<group>"; };
+		B847D2DD1D246F940018EB46 /* GarbageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarbageListViewController.swift; sourceTree = "<group>"; };
+		B847D2E01D24703A0018EB46 /* Trash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
+		B847D2E81D2472BC0018EB46 /* CreateTrashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTrashViewController.swift; sourceTree = "<group>"; };
+		B847D2EA1D2473250018EB46 /* TrashTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashTableViewCell.swift; sourceTree = "<group>"; };
+		B847D2EC1D2488790018EB46 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		F029DF41B19F8F17079F1F4C /* Pods-Taking Out the Trash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taking Out the Trash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taking Out the Trash/Pods-Taking Out the Trash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,15 +45,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9213012FC2759A6F4273C3A6 /* Pods_Taking_Out_the_Trash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27C28A5C29F16F1284562C56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3781D7A74F6A5E58B7582CF4 /* Pods-Taking Out the Trash.debug.xcconfig */,
+				F029DF41B19F8F17079F1F4C /* Pods-Taking Out the Trash.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		352675C41D24667B003ED2B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B847D2EA1D2473250018EB46 /* TrashTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -43,6 +72,10 @@
 		352675C51D246686003ED2B2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B847D2D91D246F740018EB46 /* CompostListViewController.swift */,
+				B847D2DB1D246F860018EB46 /* RecycleListViewController.swift */,
+				B847D2DD1D246F940018EB46 /* GarbageListViewController.swift */,
+				B847D2E81D2472BC0018EB46 /* CreateTrashViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -50,8 +83,17 @@
 		352675C61D24668E003ED2B2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B847D2EC1D2488790018EB46 /* RealmHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A02608022EB14A2B3B8B29CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CB08C29AFC51CFB64474218 /* Pods_Taking_Out_the_Trash.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B847D2BB1D2436B10018EB46 = {
@@ -59,6 +101,8 @@
 			children = (
 				B847D2C61D2436B10018EB46 /* Taking Out the Trash */,
 				B847D2C51D2436B10018EB46 /* Products */,
+				27C28A5C29F16F1284562C56 /* Pods */,
+				A02608022EB14A2B3B8B29CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +117,7 @@
 		B847D2C61D2436B10018EB46 /* Taking Out the Trash */ = {
 			isa = PBXGroup;
 			children = (
+				B847D2DF1D246FF10018EB46 /* Models */,
 				352675C61D24668E003ED2B2 /* Helpers */,
 				352675C51D246686003ED2B2 /* Controllers */,
 				352675C41D24667B003ED2B2 /* Views */,
@@ -85,6 +130,14 @@
 			path = "Taking Out the Trash";
 			sourceTree = "<group>";
 		};
+		B847D2DF1D246FF10018EB46 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B847D2E01D24703A0018EB46 /* Trash.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B847D2D61D2436B20018EB46 /* Build configuration list for PBXNativeTarget "Taking Out the Trash" */;
 			buildPhases = (
+				6CDEF71EF6CAD60819E24E71 /* [CP] Check Pods Manifest.lock */,
 				B847D2C01D2436B10018EB46 /* Sources */,
 				B847D2C11D2436B10018EB46 /* Frameworks */,
 				B847D2C21D2436B10018EB46 /* Resources */,
+				BD9BC575EDA9E254798E0B14 /* [CP] Embed Pods Frameworks */,
+				0E39CBA0236CA7C36CAA143A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,12 +207,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E39CBA0236CA7C36CAA143A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taking Out the Trash/Pods-Taking Out the Trash-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CDEF71EF6CAD60819E24E71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD9BC575EDA9E254798E0B14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taking Out the Trash/Pods-Taking Out the Trash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B847D2C01D2436B10018EB46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B847D2EB1D2473250018EB46 /* TrashTableViewCell.swift in Sources */,
+				B847D2DC1D246F860018EB46 /* RecycleListViewController.swift in Sources */,
+				B847D2E11D24703A0018EB46 /* Trash.swift in Sources */,
+				B847D2DA1D246F740018EB46 /* CompostListViewController.swift in Sources */,
+				B847D2DE1D246F940018EB46 /* GarbageListViewController.swift in Sources */,
+				B847D2ED1D2488790018EB46 /* RealmHelper.swift in Sources */,
 				B847D2C81D2436B10018EB46 /* AppDelegate.swift in Sources */,
+				B847D2E91D2472BC0018EB46 /* CreateTrashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +380,7 @@
 		};
 		B847D2D71D2436B20018EB46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3781D7A74F6A5E58B7582CF4 /* Pods-Taking Out the Trash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Taking Out the Trash/Info.plist";
@@ -280,6 +392,7 @@
 		};
 		B847D2D81D2436B20018EB46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F029DF41B19F8F17079F1F4C /* Pods-Taking Out the Trash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Taking Out the Trash/Info.plist";

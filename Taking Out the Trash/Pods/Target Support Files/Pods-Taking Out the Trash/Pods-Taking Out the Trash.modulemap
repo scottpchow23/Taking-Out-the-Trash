@@ -1,0 +1,6 @@
+framework module Pods_Taking_Out_the_Trash {
+  umbrella header "Pods-Taking Out the Trash-umbrella.h"
+
+  export *
+  module * { export * }
+}
