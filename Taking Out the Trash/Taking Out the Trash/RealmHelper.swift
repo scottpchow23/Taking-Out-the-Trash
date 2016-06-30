@@ -11,4 +11,23 @@ import RealmSwift
 
 class RealmHelper {
     
+    static func addTrash(trash: Trash) {
+        let realm = try! Realm()
+        try! realm.write() {
+            realm.add(trash)
+        }
+    }
+    
+    static func deleteTrash(trash: Trash) {
+        let realm = try! Realm()
+        try! realm.write() {
+            realm.delete(trash)
+        }
+    }
+    
+    static func retrieveTrash() -> Results<Trash> {
+        let realm = try! Realm()
+        let trashObs = realm.objects(Trash)
+        return trashObs
+    }
 }

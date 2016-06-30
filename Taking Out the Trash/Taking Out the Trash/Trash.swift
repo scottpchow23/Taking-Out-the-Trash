@@ -7,14 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-
-class Trash {
+class Trash: Object {
     
     enum TrashType: Int{
-        case Garbage = 1,
+        case Compost = 1,
              Recycle,
-             Compost
+             Garbage
     }
     
     dynamic var name = ""

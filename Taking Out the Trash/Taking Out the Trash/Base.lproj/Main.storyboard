@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i5M-ta-fsw" id="EiJ-dZ-Qc2">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recyclables" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9Q-33-jVC">
@@ -67,10 +67,13 @@
                     <navigationItem key="navigationItem" title="Recycle" id="0Rs-a2-kZw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="C68-hV-71B">
                             <connections>
-                                <segue destination="AbT-Dw-4cQ" kind="show" id="47R-9h-sOf"/>
+                                <segue destination="AbT-Dw-4cQ" kind="show" identifier="fromRecycle" id="47R-9h-sOf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="recycleTableView" destination="zDO-0r-ywa" id="G1R-kx-6VE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL4-E0-rdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FLR-BH-jHw" id="Jam-f1-1SO">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G28-ox-xSA">
@@ -136,10 +139,13 @@
                     <navigationItem key="navigationItem" title="Compost" id="sZJ-Bn-Qw4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="23q-76-lQF">
                             <connections>
-                                <segue destination="AbT-Dw-4cQ" kind="show" id="adG-k2-xjL"/>
+                                <segue destination="AbT-Dw-4cQ" kind="show" identifier="fromCompost" id="adG-k2-xjL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="compostTableView" destination="1XT-cJ-OTF" id="J4n-OV-Rt5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ih-M8-7mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,7 +296,7 @@
                                         <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6iC-IL-qid" id="fJG-TF-tOr">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garbage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-PF-P4b">
@@ -331,10 +337,13 @@
                     <navigationItem key="navigationItem" title="Garbage" id="zrj-FB-cSn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GL7-5w-eyt">
                             <connections>
-                                <segue destination="AbT-Dw-4cQ" kind="show" id="gwr-UB-nQB"/>
+                                <segue destination="AbT-Dw-4cQ" kind="show" identifier="fromGarbage" id="gwr-UB-nQB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="garbageTableView" destination="goR-so-7pI" id="Z6t-Q4-pib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzo-b2-Yvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CompostListViewController: UIViewController {
-
+    
+    @IBOutlet weak var compostTableView: UITableView!
+    
+    var compost: Results<Trash>! {
+        didSet {
+            compostTableView.reloadData()
+        }
+    }
+    
+    var composts: [Trash]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        compost = RealmHelper.retrieveTrash()
+        composts = Array(compost)
+        composts = composts?.filter({$0.type == 1})
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +34,19 @@ class CompostListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier != nil {
+            let createTrashViewController = segue.destinationViewController as! CreateTrashViewController
+            createTrashViewController.fromWhere = "Compost"
+        }
+    }
 
+    override func viewWillAppear(animated: Bool) {
+        compost = RealmHelper.retrieveTrash()
+        composts = Array(compost)
+        composts = composts?.filter({$0.type == 1})
+        compostTableView.reloadData()
+    }
     /*
     // MARK: - Navigation
 
@@ -36,8 +61,7 @@ class CompostListViewController: UIViewController {
 
 extension CompostListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("hi")
-        return 10
+        return composts?.count ?? 1
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -46,7 +70,9 @@ extension CompostListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CompostCell") as! TrashTableViewCell
-        cell.compostLabel.text = "compost"
+        if let composts = composts {
+            cell.compostLabel.text = composts[indexPath.row].name
+        }
         return cell
     }
 }

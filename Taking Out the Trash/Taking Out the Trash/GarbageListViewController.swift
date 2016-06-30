@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GarbageListViewController: UIViewController {
     
+    @IBOutlet weak var garbageTableView: UITableView!
     
+    var garbage: Results<Trash>! {
+        didSet {
+            garbageTableView.reloadData()
+        }
+    }
+    
+    var garbages: [Trash]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        garbage = RealmHelper.retrieveTrash()
+        garbages = Array(garbage)
+        garbages = garbages?.filter({$0.type == 3})
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +33,23 @@ class GarbageListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier != nil {
+            let createTrashViewController = segue.destinationViewController as! CreateTrashViewController
+            createTrashViewController.fromWhere = "Garbage"
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        garbage = RealmHelper.retrieveTrash()
+        garbages = Array(garbage)
+        garbages = garbages?.filter({$0.type == 3})
+        garbageTableView.reloadData()
+    }
 
+
+    
+    
     /*
     // MARK: - Navigation
 
@@ -38,8 +64,7 @@ class GarbageListViewController: UIViewController {
 
 extension GarbageListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("hi")
-        return 10
+        return garbages?.count ?? 1
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -48,7 +73,9 @@ extension GarbageListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GarbageCell") as! TrashTableViewCell
-        cell.garbageLabel.text = "trash"
+        if let garbages = garbages {
+            cell.garbageLabel.text = garbages[indexPath.row].name
+        }
         return cell
     }
     

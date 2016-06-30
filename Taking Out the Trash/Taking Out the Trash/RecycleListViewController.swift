@@ -7,19 +7,47 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RecycleListViewController: UIViewController {
 
+    @IBOutlet weak var recycleTableView: UITableView!
+    
+    var recycle: Results<Trash>! {
+        didSet {
+            recycleTableView.reloadData()
+        }
+    }
+    
+    var recycles: [Trash]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        recycle = RealmHelper.retrieveTrash()
+        recycles = Array(recycle)
+        recycles = recycles?.filter({$0.type == 2})
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier != nil {
+            let createTrashViewController = segue.destinationViewController as! CreateTrashViewController
+            createTrashViewController.fromWhere = "Recycle"
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        recycle = RealmHelper.retrieveTrash()
+        recycles = Array(recycle)
+        recycles = recycles?.filter({$0.type == 2})
+        recycleTableView.reloadData()
+    }
+
     
 
     /*
@@ -36,8 +64,7 @@ class RecycleListViewController: UIViewController {
 
 extension RecycleListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("hi")
-        return 10
+        return recycles?.count ?? 1
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -46,7 +73,9 @@ extension RecycleListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RecycleCell") as! TrashTableViewCell
-        cell.recycleLabel.text = "recyclable"
+        if let recycles = recycles{
+            cell.recycleLabel.text = recycles[indexPath.row].name
+        }
         return cell
     }
 }
