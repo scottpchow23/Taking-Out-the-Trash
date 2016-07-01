@@ -10,14 +10,13 @@ import UIKit
 import RealmSwift
 
 class RecycleListViewController: UIViewController {
-
-    @IBOutlet weak var recycleTableView: UITableView!
     
     var recycle: Results<Trash>! {
         didSet {
-            recycleTableView.reloadData()
         }
     }
+    
+    var trashCollectionViewController: TrashCollectionViewController?
     
     var recycles: [Trash]?
     
@@ -36,8 +35,15 @@ class RecycleListViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != nil {
-            let createTrashViewController = segue.destinationViewController as! CreateTrashViewController
-            createTrashViewController.fromWhere = "Recycle"
+            if segue.identifier == "fromRecycle" {
+                let createTrashViewController = segue.destinationViewController as! CreateTrashViewController
+                createTrashViewController.fromWhere = "Recycle"
+                createTrashViewController.numberOfTrash = (recycles?.count)!
+            }
+            else if segue.identifier == "fromRecycleContainer" {
+                trashCollectionViewController = segue.destinationViewController as? TrashCollectionViewController
+                trashCollectionViewController?.trashType = 2
+            }
         }
     }
     
@@ -45,7 +51,8 @@ class RecycleListViewController: UIViewController {
         recycle = RealmHelper.retrieveTrash()
         recycles = Array(recycle)
         recycles = recycles?.filter({$0.type == 2})
-        recycleTableView.reloadData()
+        
+        trashCollectionViewController?.trashCollection = recycles ?? []
     }
 
     
@@ -60,22 +67,4 @@ class RecycleListViewController: UIViewController {
     }
     */
 
-}
-
-extension RecycleListViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recycles?.count ?? 1
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RecycleCell") as! TrashTableViewCell
-        if let recycles = recycles{
-            cell.recycleLabel.text = recycles[indexPath.row].name
-        }
-        return cell
-    }
 }

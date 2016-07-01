@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		352675CC1D26D65C003ED2B2 /* TrashCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352675CB1D26D65C003ED2B2 /* TrashCollectionViewController.swift */; };
+		352675CE1D26D9CE003ED2B2 /* TrashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352675CD1D26D9CE003ED2B2 /* TrashCollectionViewCell.swift */; };
+		352675D01D26E99C003ED2B2 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352675CF1D26E99C003ED2B2 /* ImageHelper.swift */; };
+		352675D21D26EAD6003ED2B2 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352675D11D26EAD6003ED2B2 /* PhotoTakingHelper.swift */; };
 		9213012FC2759A6F4273C3A6 /* Pods_Taking_Out_the_Trash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB08C29AFC51CFB64474218 /* Pods_Taking_Out_the_Trash.framework */; };
 		B847D2C81D2436B10018EB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2C71D2436B10018EB46 /* AppDelegate.swift */; };
 		B847D2CD1D2436B10018EB46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B847D2CB1D2436B10018EB46 /* Main.storyboard */; };
@@ -17,11 +21,14 @@
 		B847D2DE1D246F940018EB46 /* GarbageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2DD1D246F940018EB46 /* GarbageListViewController.swift */; };
 		B847D2E11D24703A0018EB46 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2E01D24703A0018EB46 /* Trash.swift */; };
 		B847D2E91D2472BC0018EB46 /* CreateTrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2E81D2472BC0018EB46 /* CreateTrashViewController.swift */; };
-		B847D2EB1D2473250018EB46 /* TrashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2EA1D2473250018EB46 /* TrashTableViewCell.swift */; };
 		B847D2ED1D2488790018EB46 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847D2EC1D2488790018EB46 /* RealmHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		352675CB1D26D65C003ED2B2 /* TrashCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashCollectionViewController.swift; sourceTree = "<group>"; };
+		352675CD1D26D9CE003ED2B2 /* TrashCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashCollectionViewCell.swift; sourceTree = "<group>"; };
+		352675CF1D26E99C003ED2B2 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		352675D11D26EAD6003ED2B2 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
 		3781D7A74F6A5E58B7582CF4 /* Pods-Taking Out the Trash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taking Out the Trash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taking Out the Trash/Pods-Taking Out the Trash.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB08C29AFC51CFB64474218 /* Pods_Taking_Out_the_Trash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taking_Out_the_Trash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B847D2C41D2436B10018EB46 /* Taking Out the Trash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taking Out the Trash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,7 +42,6 @@
 		B847D2DD1D246F940018EB46 /* GarbageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarbageListViewController.swift; sourceTree = "<group>"; };
 		B847D2E01D24703A0018EB46 /* Trash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
 		B847D2E81D2472BC0018EB46 /* CreateTrashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTrashViewController.swift; sourceTree = "<group>"; };
-		B847D2EA1D2473250018EB46 /* TrashTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashTableViewCell.swift; sourceTree = "<group>"; };
 		B847D2EC1D2488790018EB46 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		F029DF41B19F8F17079F1F4C /* Pods-Taking Out the Trash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taking Out the Trash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taking Out the Trash/Pods-Taking Out the Trash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +70,7 @@
 		352675C41D24667B003ED2B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B847D2EA1D2473250018EB46 /* TrashTableViewCell.swift */,
+				352675CD1D26D9CE003ED2B2 /* TrashCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -76,6 +82,7 @@
 				B847D2DB1D246F860018EB46 /* RecycleListViewController.swift */,
 				B847D2DD1D246F940018EB46 /* GarbageListViewController.swift */,
 				B847D2E81D2472BC0018EB46 /* CreateTrashViewController.swift */,
+				352675CB1D26D65C003ED2B2 /* TrashCollectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -83,7 +90,9 @@
 		352675C61D24668E003ED2B2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				352675CF1D26E99C003ED2B2 /* ImageHelper.swift */,
 				B847D2EC1D2488790018EB46 /* RealmHelper.swift */,
+				352675D11D26EAD6003ED2B2 /* PhotoTakingHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -260,7 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B847D2EB1D2473250018EB46 /* TrashTableViewCell.swift in Sources */,
+				352675CC1D26D65C003ED2B2 /* TrashCollectionViewController.swift in Sources */,
+				352675D01D26E99C003ED2B2 /* ImageHelper.swift in Sources */,
+				352675CE1D26D9CE003ED2B2 /* TrashCollectionViewCell.swift in Sources */,
+				352675D21D26EAD6003ED2B2 /* PhotoTakingHelper.swift in Sources */,
 				B847D2DC1D246F860018EB46 /* RecycleListViewController.swift in Sources */,
 				B847D2E11D24703A0018EB46 /* Trash.swift in Sources */,
 				B847D2DA1D246F740018EB46 /* CompostListViewController.swift in Sources */,

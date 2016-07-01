@@ -11,13 +11,12 @@ import RealmSwift
 
 class CompostListViewController: UIViewController {
     
-    @IBOutlet weak var compostTableView: UITableView!
-    
     var compost: Results<Trash>! {
         didSet {
-            compostTableView.reloadData()
         }
     }
+    
+    var trashCollectionViewController: TrashCollectionViewController?
     
     var composts: [Trash]?
     
@@ -36,8 +35,16 @@ class CompostListViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != nil {
-            let createTrashViewController = segue.destinationViewController as! CreateTrashViewController
-            createTrashViewController.fromWhere = "Compost"
+            if segue.identifier == "fromCompost" {
+                let createTrashViewController = segue.destinationViewController as! CreateTrashViewController
+                createTrashViewController.fromWhere = "Compost"
+                createTrashViewController.numberOfTrash = (composts?.count)!
+            }
+            else if segue.identifier == "fromCompostContainer" {
+                trashCollectionViewController = segue.destinationViewController as? TrashCollectionViewController
+                trashCollectionViewController?.trashType = 1
+                
+            }
         }
     }
 
@@ -45,7 +52,9 @@ class CompostListViewController: UIViewController {
         compost = RealmHelper.retrieveTrash()
         composts = Array(compost)
         composts = composts?.filter({$0.type == 1})
-        compostTableView.reloadData()
+
+        trashCollectionViewController!.trashCollection = composts ?? []
+        
     }
     /*
     // MARK: - Navigation
@@ -57,22 +66,4 @@ class CompostListViewController: UIViewController {
     }
     */
 
-}
-
-extension CompostListViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return composts?.count ?? 1
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CompostCell") as! TrashTableViewCell
-        if let composts = composts {
-            cell.compostLabel.text = composts[indexPath.row].name
-        }
-        return cell
-    }
 }

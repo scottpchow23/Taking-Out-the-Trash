@@ -30,4 +30,12 @@ class RealmHelper {
         let trashObs = realm.objects(Trash)
         return trashObs
     }
+    
+    static func updateTrash(trashToBeEdited: Trash, newTrash: Trash) {
+        let realm = try! Realm()
+        try! realm.write() {
+            trashToBeEdited.name = newTrash.name
+            trashToBeEdited.fileName = newTrash.fileName
+        }
+    }
 }

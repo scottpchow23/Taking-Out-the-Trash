@@ -19,5 +19,6 @@ class Trash: Object {
     
     dynamic var name = ""
     dynamic var type = 1
+    dynamic var fileName = ""
     
 }

@@ -3,13 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Recycle View-->
         <scene sceneID="KWt-Yl-05D">
             <objects>
-                <viewController storyboardIdentifier="RecycleTableView" title="Recycle View" id="aO2-cL-Fuw" customClass="RecycleListViewController" customModule="Taking_Out_the_Trash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecycleTableView" title="Recycle View" automaticallyAdjustsScrollViewInsets="NO" id="aO2-cL-Fuw" customClass="RecycleListViewController" customModule="Taking_Out_the_Trash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ANe-WQ-RCc"/>
                         <viewControllerLayoutGuide type="bottom" id="NkB-C3-IQK"/>
@@ -18,50 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zDO-0r-ywa">
-                                <rect key="frame" x="20" y="64" width="560" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecycleCell" id="i5M-ta-fsw" customClass="TrashTableViewCell" customModule="Taking_Out_the_Trash" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i5M-ta-fsw" id="EiJ-dZ-Qc2">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recyclables" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9Q-33-jVC">
-                                                    <rect key="frame" x="8" y="7" width="544" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="CSd-E2-ovM"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="aLC-tm-5aj"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="C9Q-33-jVC" firstAttribute="centerY" secondItem="EiJ-dZ-Qc2" secondAttribute="centerY" id="SXe-0x-2DJ"/>
-                                                <constraint firstItem="C9Q-33-jVC" firstAttribute="trailing" secondItem="EiJ-dZ-Qc2" secondAttribute="trailingMargin" id="hl4-YX-YDJ"/>
-                                                <constraint firstItem="C9Q-33-jVC" firstAttribute="leading" secondItem="EiJ-dZ-Qc2" secondAttribute="leadingMargin" id="hsu-uj-7OD"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="recycleLabel" destination="C9Q-33-jVC" id="hB4-dA-teC"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Reo-BP-dYJ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="aO2-cL-Fuw" id="T5F-i0-TMK"/>
+                                    <segue destination="yLu-BW-Ur2" kind="embed" identifier="fromRecycleContainer" id="Bbh-Xq-HZq"/>
                                 </connections>
-                            </tableView>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zDO-0r-ywa" firstAttribute="leading" secondItem="wkc-dr-KYm" secondAttribute="leadingMargin" id="FvU-YL-Lva"/>
-                            <constraint firstItem="zDO-0r-ywa" firstAttribute="top" secondItem="ANe-WQ-RCc" secondAttribute="bottom" id="csz-lA-3j2"/>
-                            <constraint firstItem="NkB-C3-IQK" firstAttribute="top" secondItem="zDO-0r-ywa" secondAttribute="bottom" id="hud-ua-bkP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zDO-0r-ywa" secondAttribute="trailing" id="uft-Yy-fGL"/>
+                            <constraint firstItem="Reo-BP-dYJ" firstAttribute="top" secondItem="ANe-WQ-RCc" secondAttribute="bottom" id="Agt-Ck-ZJT"/>
+                            <constraint firstAttribute="trailing" secondItem="Reo-BP-dYJ" secondAttribute="trailing" id="O2Q-YD-fmq"/>
+                            <constraint firstItem="Reo-BP-dYJ" firstAttribute="leading" secondItem="wkc-dr-KYm" secondAttribute="leading" id="Oib-kE-D0k"/>
+                            <constraint firstItem="NkB-C3-IQK" firstAttribute="top" secondItem="Reo-BP-dYJ" secondAttribute="bottom" id="SdI-0G-EMc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recycle" id="0Rs-a2-kZw">
@@ -71,9 +40,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="recycleTableView" destination="zDO-0r-ywa" id="G1R-kx-6VE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL4-E0-rdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,7 +48,7 @@
         <!--Compost View-->
         <scene sceneID="21e-u4-hmx">
             <objects>
-                <viewController storyboardIdentifier="CompostTableView" title="Compost View" id="yLN-z5-Svi" customClass="CompostListViewController" customModule="Taking_Out_the_Trash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompostTableView" title="Compost View" automaticallyAdjustsScrollViewInsets="NO" id="yLN-z5-Svi" customClass="CompostListViewController" customModule="Taking_Out_the_Trash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qaO-Oe-Wqs"/>
                         <viewControllerLayoutGuide type="bottom" id="jDH-dg-4uk"/>
@@ -91,50 +57,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1XT-cJ-OTF">
-                                <rect key="frame" x="20" y="64" width="560" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompostCell" id="FLR-BH-jHw" customClass="TrashTableViewCell" customModule="Taking_Out_the_Trash" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FLR-BH-jHw" id="Jam-f1-1SO">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G28-ox-xSA">
-                                                    <rect key="frame" x="8" y="7" width="544" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="pKJ-XB-7Tm"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="G28-ox-xSA" firstAttribute="leading" secondItem="Jam-f1-1SO" secondAttribute="leadingMargin" id="2gC-BG-6yM"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="G28-ox-xSA" secondAttribute="trailing" id="QPp-vz-e7R"/>
-                                                <constraint firstItem="G28-ox-xSA" firstAttribute="centerY" secondItem="Jam-f1-1SO" secondAttribute="centerY" id="vD1-v4-ErD"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="compostLabel" destination="G28-ox-xSA" id="fiM-Tk-VxR"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rm-Hs-5CE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="yLN-z5-Svi" id="Pbf-8z-6bv"/>
+                                    <segue destination="yLu-BW-Ur2" kind="embed" identifier="fromCompostContainer" id="ftE-9W-iPG"/>
                                 </connections>
-                            </tableView>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1XT-cJ-OTF" firstAttribute="top" secondItem="qaO-Oe-Wqs" secondAttribute="bottom" id="cQE-cd-VqV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1XT-cJ-OTF" secondAttribute="trailing" id="fXl-ef-oAc"/>
-                            <constraint firstItem="jDH-dg-4uk" firstAttribute="top" secondItem="1XT-cJ-OTF" secondAttribute="bottom" id="ho4-eD-wm8"/>
-                            <constraint firstItem="1XT-cJ-OTF" firstAttribute="leading" secondItem="0Wu-y8-yMn" secondAttribute="leadingMargin" id="vkf-sp-bRy"/>
+                            <constraint firstItem="7Rm-Hs-5CE" firstAttribute="top" secondItem="qaO-Oe-Wqs" secondAttribute="bottom" id="0C0-hR-mHC"/>
+                            <constraint firstAttribute="trailing" secondItem="7Rm-Hs-5CE" secondAttribute="trailing" id="5ki-lW-IZr"/>
+                            <constraint firstItem="7Rm-Hs-5CE" firstAttribute="top" secondItem="qaO-Oe-Wqs" secondAttribute="bottom" id="Hdm-xo-qI4"/>
+                            <constraint firstItem="jDH-dg-4uk" firstAttribute="top" secondItem="7Rm-Hs-5CE" secondAttribute="bottom" id="SvA-gz-MhN"/>
+                            <constraint firstItem="7Rm-Hs-5CE" firstAttribute="leading" secondItem="0Wu-y8-yMn" secondAttribute="leading" id="cdR-Oi-AeD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0C0-hR-mHC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Compost" id="sZJ-Bn-Qw4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="23q-76-lQF">
@@ -143,13 +85,93 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="compostTableView" destination="1XT-cJ-OTF" id="J4n-OV-Rt5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ih-M8-7mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-662" y="39"/>
+        </scene>
+        <!--Trash Collection View Controller-->
+        <scene sceneID="i5r-hX-ndB">
+            <objects>
+                <collectionViewController id="yLu-BW-Ur2" customClass="TrashCollectionViewController" customModule="Taking_Out_the_Trash" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="D4b-aJ-GiU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XG8-ll-XtL">
+                            <size key="itemSize" width="256" height="192"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrashCell" id="8vm-0o-xUg" customClass="TrashCollectionViewCell" customModule="Taking_Out_the_Trash" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="256" height="192"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfie" translatesAutoresizingMaskIntoConstraints="NO" id="b9N-Jy-Jyu">
+                                            <rect key="frame" x="0.0" y="0.0" width="256" height="163"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMY-9f-1i6">
+                                            <rect key="frame" x="0.0" y="167" width="256" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="H4I-Nf-XKH"/>
+                                                <constraint firstAttribute="height" constant="30" id="lLX-ku-SYE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="lLX-ku-SYE"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="GMY-9f-1i6" firstAttribute="top" secondItem="b9N-Jy-Jyu" secondAttribute="bottom" constant="8" id="7Y7-gT-mQW"/>
+                                    <constraint firstItem="GMY-9f-1i6" firstAttribute="top" secondItem="b9N-Jy-Jyu" secondAttribute="bottom" constant="4" id="82y-Nr-PbF"/>
+                                    <constraint firstAttribute="trailing" secondItem="GMY-9f-1i6" secondAttribute="trailing" id="PZr-hR-AGA"/>
+                                    <constraint firstItem="GMY-9f-1i6" firstAttribute="top" secondItem="b9N-Jy-Jyu" secondAttribute="bottom" constant="8" id="Yex-IH-ef3"/>
+                                    <constraint firstAttribute="bottom" secondItem="GMY-9f-1i6" secondAttribute="bottom" constant="4" id="cPY-dP-0EV"/>
+                                    <constraint firstItem="GMY-9f-1i6" firstAttribute="leading" secondItem="8vm-0o-xUg" secondAttribute="leading" id="cgg-zc-zfT"/>
+                                    <constraint firstItem="GMY-9f-1i6" firstAttribute="leading" secondItem="8vm-0o-xUg" secondAttribute="leading" id="il5-Bo-XDG"/>
+                                    <constraint firstAttribute="trailing" secondItem="b9N-Jy-Jyu" secondAttribute="trailing" id="kkd-bR-mk0"/>
+                                    <constraint firstAttribute="trailing" secondItem="GMY-9f-1i6" secondAttribute="trailing" id="maI-YP-Fc4"/>
+                                    <constraint firstItem="b9N-Jy-Jyu" firstAttribute="leading" secondItem="8vm-0o-xUg" secondAttribute="leading" id="rCv-e0-gJ9"/>
+                                    <constraint firstItem="b9N-Jy-Jyu" firstAttribute="top" secondItem="8vm-0o-xUg" secondAttribute="top" id="x7L-eU-bNh"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Y7-gT-mQW"/>
+                                        <exclude reference="PZr-hR-AGA"/>
+                                        <exclude reference="Yex-IH-ef3"/>
+                                        <exclude reference="il5-Bo-XDG"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="trashImageView" destination="b9N-Jy-Jyu" id="z3f-6I-Atf"/>
+                                    <outlet property="trashLabel" destination="GMY-9f-1i6" id="ghg-cP-H1Z"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="yLu-BW-Ur2" id="vaK-G4-puC"/>
+                            <outlet property="delegate" destination="yLu-BW-Ur2" id="VPp-RU-gyo"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="AbT-Dw-4cQ" kind="show" identifier="showTrashEdit" id="RN0-19-D4m"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryK-dW-zpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="233.5"/>
         </scene>
         <!--Add Trash-->
         <scene sceneID="WCk-wK-Oo9">
@@ -160,11 +182,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Of9-JS-dm8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vHr-aH-btI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="P0O-r2-Uam">
-                                <rect key="frame" x="150" y="147" width="300" height="30"/>
+                                <rect key="frame" x="150" y="83" width="300" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ7-Xw-Fas">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
@@ -179,6 +201,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="trashEdited:" destination="AbT-Dw-4cQ" eventType="editingChanged" id="MsU-2Y-Rnd"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -195,9 +220,28 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-qe-2MA">
+                                <rect key="frame" x="175" y="163" width="250" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X4f-qe-2MA" secondAttribute="height" multiplier="4:3" id="jGc-eE-kfg"/>
+                                    <constraint firstAttribute="width" constant="250" id="pzv-Ep-7A8"/>
+                                    <constraint firstAttribute="height" constant="300" id="qEx-ig-CST"/>
+                                </constraints>
+                                <state key="normal" title="Tap here to take a picture"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qEx-ig-CST"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="takePicture:" destination="AbT-Dw-4cQ" eventType="touchUpInside" id="lYT-QX-S3a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="X4f-qe-2MA" firstAttribute="top" secondItem="P0O-r2-Uam" secondAttribute="bottom" constant="50" id="Clf-sR-fXp"/>
+                            <constraint firstItem="X4f-qe-2MA" firstAttribute="centerX" secondItem="vHr-aH-btI" secondAttribute="centerX" id="alh-BF-PDq"/>
                             <constraint firstItem="P0O-r2-Uam" firstAttribute="centerX" secondItem="vHr-aH-btI" secondAttribute="centerX" id="meC-gS-rtm"/>
                             <constraint firstItem="P0O-r2-Uam" firstAttribute="top" secondItem="hrx-AH-NbY" secondAttribute="bottom" constant="83" id="mr6-ve-xft"/>
                         </constraints>
@@ -212,12 +256,14 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="saveButton" destination="Jsk-9j-2NI" id="OKe-14-cKM"/>
+                        <outlet property="takePictureButton" destination="X4f-qe-2MA" id="mIc-BP-7hu"/>
                         <outlet property="trashNameTextField" destination="qNJ-ZY-RSz" id="XDs-XF-WyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGf-ay-d3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="864"/>
+            <point key="canvasLocation" x="114" y="1090"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GAO-Hq-IHW">
@@ -279,7 +325,7 @@
         <!--Garbage View-->
         <scene sceneID="75P-51-Gn0">
             <objects>
-                <viewController storyboardIdentifier="GarbageTableView" title="Garbage View" id="HP5-Ul-DOa" customClass="GarbageListViewController" customModule="Taking_Out_the_Trash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GarbageTableView" title="Garbage View" automaticallyAdjustsScrollViewInsets="NO" id="HP5-Ul-DOa" customClass="GarbageListViewController" customModule="Taking_Out_the_Trash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pWG-vV-7vo"/>
                         <viewControllerLayoutGuide type="bottom" id="4nF-IH-4J8"/>
@@ -288,50 +334,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="goR-so-7pI">
-                                <rect key="frame" x="20" y="64" width="560" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GarbageCell" id="6iC-IL-qid" customClass="TrashTableViewCell" customModule="Taking_Out_the_Trash" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6iC-IL-qid" id="fJG-TF-tOr">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garbage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-PF-P4b">
-                                                    <rect key="frame" x="8" y="7" width="544" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="I7b-V1-ea9"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YxH-kB-HJh"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qOe-PF-P4b" firstAttribute="trailing" secondItem="fJG-TF-tOr" secondAttribute="trailingMargin" id="aTp-Qc-vGU"/>
-                                                <constraint firstItem="qOe-PF-P4b" firstAttribute="leading" secondItem="fJG-TF-tOr" secondAttribute="leadingMargin" id="n0J-0k-gtH"/>
-                                                <constraint firstItem="qOe-PF-P4b" firstAttribute="centerY" secondItem="fJG-TF-tOr" secondAttribute="centerY" id="vh6-f8-LMI"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="garbageLabel" destination="qOe-PF-P4b" id="hLD-IH-u4J"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2x-kj-sOB">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="HP5-Ul-DOa" id="zcG-QN-wiC"/>
+                                    <segue destination="yLu-BW-Ur2" kind="embed" identifier="fromGarbageContainer" id="heq-Kx-Gpi"/>
                                 </connections>
-                            </tableView>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="goR-so-7pI" firstAttribute="leading" secondItem="veD-3k-w5y" secondAttribute="leadingMargin" id="3hA-bY-uoi"/>
-                            <constraint firstItem="goR-so-7pI" firstAttribute="top" secondItem="pWG-vV-7vo" secondAttribute="bottom" id="AXW-Jw-XYJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="goR-so-7pI" secondAttribute="trailing" id="BjV-86-dgK"/>
-                            <constraint firstItem="4nF-IH-4J8" firstAttribute="top" secondItem="goR-so-7pI" secondAttribute="bottom" id="bGQ-aE-URx"/>
+                            <constraint firstItem="4nF-IH-4J8" firstAttribute="top" secondItem="x2x-kj-sOB" secondAttribute="bottom" id="QAY-c8-j3H"/>
+                            <constraint firstAttribute="trailing" secondItem="x2x-kj-sOB" secondAttribute="trailing" id="Suf-eU-Grt"/>
+                            <constraint firstItem="x2x-kj-sOB" firstAttribute="top" secondItem="pWG-vV-7vo" secondAttribute="bottom" id="bj5-nC-gP7"/>
+                            <constraint firstItem="x2x-kj-sOB" firstAttribute="leading" secondItem="veD-3k-w5y" secondAttribute="leading" id="r5h-9T-IMS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Garbage" id="zrj-FB-cSn">
@@ -341,9 +356,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="garbageTableView" destination="goR-so-7pI" id="Z6t-Q4-pib"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzo-b2-Yvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,7 +381,11 @@
             <point key="canvasLocation" x="-1482" y="1442"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="selfie" width="1080" height="720"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="adG-k2-xjL"/>
+        <segue reference="heq-Kx-Gpi"/>
+        <segue reference="RN0-19-D4m"/>
     </inferredMetricsTieBreakers>
 </document>
