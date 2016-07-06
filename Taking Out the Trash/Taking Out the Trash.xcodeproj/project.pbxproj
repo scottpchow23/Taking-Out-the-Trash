@@ -182,6 +182,7 @@
 				TargetAttributes = {
 					B847D2C31D2436B10018EB46 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4J6V7599DE;
 					};
 				};
 			};
@@ -395,10 +396,13 @@
 			baseConfigurationReference = 3781D7A74F6A5E58B7582CF4 /* Pods-Taking Out the Trash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Taking Out the Trash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Taking-Out-the-Trash";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -407,10 +411,13 @@
 			baseConfigurationReference = F029DF41B19F8F17079F1F4C /* Pods-Taking Out the Trash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Taking Out the Trash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Taking-Out-the-Trash";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
